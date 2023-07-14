@@ -15,7 +15,7 @@ package com.leetcode;
  * 在查找上一行的最小值时，通过上一行同一列的值作为中继，分别与左右的值比较。
  * 这统一处理了，第一列和最后一列的仅有两个的情况。对中间的值，两次比较能够将最小值挑出来。
  */
-public class minFallingPathSum {
+public class MinFallingPathSum {
 
     public int solution(int[][] matrix){
         int n = matrix.length;
@@ -53,7 +53,7 @@ public class minFallingPathSum {
     }
 
     public static void main(String[] args) {
-        minFallingPathSum slove = new minFallingPathSum();
+        MinFallingPathSum slove = new MinFallingPathSum();
         int[][]  m = {{2,1,3},{6,5,4},{7,8,9}};
         int ans = slove.solution(m);
         System.out.println(ans);

@@ -22,7 +22,7 @@ package com.leetcode;
  * 2. 在循环时将行数对2取模，即row = i%2; 使行指针在0 1之间跳动
  */
 
-public class longestCommonSubsequence {
+public class LongestCommonSubsequence {
     public int max(int x,int y){
         if(x>=y){
             return x;
@@ -54,7 +54,7 @@ public class longestCommonSubsequence {
     }
 
     public static void main(String[] args) {
-        longestCommonSubsequence result = new longestCommonSubsequence();
+        LongestCommonSubsequence result = new LongestCommonSubsequence();
         int ans = result.solution("abcde","ace");
         System.out.println(ans);
     }
