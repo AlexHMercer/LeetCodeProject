@@ -23,6 +23,9 @@ import java.util.LinkedList;
  *      这代表，从相遇节点和头结点各自定义一个指针，每次两个指针后移一位，当这两个指针相遇时，指向的就是环的起始节点
  */
 public class HasCycle {
+    public boolean fastSlowIndex(ListNode head) {
+        return true;
+    }
     public boolean hasCycle(ListNode head) {
         HashSet<ListNode> listNodes = new HashSet<>();
         while(head != null){
