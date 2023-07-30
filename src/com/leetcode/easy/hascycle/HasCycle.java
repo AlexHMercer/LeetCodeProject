@@ -13,6 +13,14 @@ import java.util.LinkedList;
  *
  * 注：
  * 本题还可以使用快慢指针方法优化空间复杂度，需要了解一下龟兔赛跑算法
+ * 快慢指针法：
+ *      快慢指针fast，slow均从头指针出发，slow一次走一步，fast一次走两步，若没有环，fast会返回null，若有环则一定相遇
+ *      当有环的时候：相遇肯定在环内，并且在slow进入环一圈之内相遇，
+ *      假设环外元素a个，环开始到相遇元素b个，环剩余元素c个
+ *      则直到第一次相遇slow走过的路程=a+b
+ *      fast走过的路程=a+n(b+c)+b;n(b+c)表示在环内绕了多少圈
+ *      又由于快慢指针走过的路径长度存在2倍关系，所以2(a+b) = a+n(b+c)+b;化简后得a = n(b+c)-b = (n-1)(b+c)+c;
+ *      这代表，从相遇节点和头结点各自定义一个指针，每次两个指针后移一位，当这两个指针相遇时，指向的就是环的起始节点
  */
 public class HasCycle {
     public boolean hasCycle(ListNode head) {
