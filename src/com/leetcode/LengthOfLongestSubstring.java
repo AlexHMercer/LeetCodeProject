@@ -64,7 +64,10 @@ public class LengthOfLongestSubstring {
         for (int start=0,end=0;end<n;end++){
             Character c = s.charAt(end);
             if (map.containsKey(c)){
+                // 以abba为例，当start移动到2时，end向后移动会发现一个map中存在的字符a，
+                // 这时候就要判断，start还是a指向的索引大，不能再返回，只能选大的那一个
                 start = Math.max(start,map.get(c));
+                //start = map.get(c);
             }
             ans = Math.max(ans,end-start+1);
             map.put(c,end+1);
@@ -75,7 +78,7 @@ public class LengthOfLongestSubstring {
 
     public static void main(String[] args) {
         LengthOfLongestSubstring lengthOfLongestSubstring = new LengthOfLongestSubstring();
-        int i = lengthOfLongestSubstring.lengthOfLongestSubstring("abcabcbb");
+        int i = lengthOfLongestSubstring.lengthOfLongestSubstring("abba");
         System.out.println(i);
     }
 }
